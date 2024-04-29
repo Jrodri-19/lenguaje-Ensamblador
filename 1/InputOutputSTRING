@@ -1,0 +1,22 @@
+.data
+	m1: .asciiz "digite->\t "
+	m2: .asciiz "respuesta ->\t"
+	name: .space 20
+.text
+	main:
+	li $v0,4		
+	la $a0,m1	
+	syscall
+	li $v0,  8
+	la $a0, name
+	li $a1,20	#tamaño 20
+	syscall
+	li $v0,4
+	la $a0,m2
+	syscall
+	li $v0,4
+	la $a0,name
+	syscall
+	#f12 muestra
+	li $v0,10
+	syscall
