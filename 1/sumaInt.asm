@@ -1,0 +1,18 @@
+.data
+	m1: .asciiz "La suma es\t "
+	n1: .word 5
+	n2: .word 4
+.text
+	main:
+	lw $t0,n1
+	lw $t1,n2
+	
+	li $v0,4		
+	la $a0,m1	
+	syscall
+	li $v0, 1
+	add $a0,$t0,$t1
+	syscall
+	#f12 muestra
+	li $v0,10
+	syscall
